@@ -3,4 +3,18 @@ name = "grpc_server"
 version = "0.1.0"
 edition = "2024"
 
+[[bin]] # Bin to run the server
+name = "grpc-server"
+path = "src/server.rs"
+
+[[bin]] # Bin to run the client
+name = "grpc-client"
+path = "src/client.rs"
+
 [dependencies]
+prost = "0.13.5"
+tokio = { version = "1.44.2", features = ["macros", "rt-multi-thread"] }
+tonic = "0.13.0"
+
+[build-dependencies]
+tonic-build = "0.13.0"
